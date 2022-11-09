@@ -4,8 +4,6 @@
 
 
 ## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
-materialapp? scaffold? theme? container? icons?
-Text, Padding, Row, FloatingActionButton, Expanded
 - Scaffold : untuk mengatur layout dari widget yang ada di dalamnya
 - Text : untuk menampilkan text dengan format style tertentu
 - FloatingActionButton : untuk menampilkan button yang dapat melakukan suatu action
