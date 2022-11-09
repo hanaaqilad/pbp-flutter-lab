@@ -24,7 +24,7 @@ Fungsi dari setState adalah untuk memberi tahu framework bahwa internal state ob
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 - Membuat app dengan perintah flutter create counter_7
-- Melakukan modifikasi pada file lib/main.dart, yaitu:
+- Melakukan modifikasi pada file `lib/main.dart`, yaitu:
     - Menambahkan floating action button baru dengan icon remove (-) 
     - Membuat fungsi decrement pada onpressed button
     - Menambahkan padding dan expanded untuk mengatur jarak dan posisi dua button
