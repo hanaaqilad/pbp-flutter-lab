@@ -16,7 +16,6 @@
 
 
 ## Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
-buat toggle state?
 Fungsi dari setState adalah untuk memberi tahu framework bahwa internal state objek terkait telah berubah karena adanya action yang mungkin memengaruhi interface pengguna di subtree ini menyebabkan framework menjadwalkan build untuk objek status ini. Jika hanya mengubah status secara langsung tanpa memanggil setState, interface untuk subtree ini mungkin tidak terpebaharui untuk mencerminkan status baru. 
 
 ## Jelaskan perbedaan antara const dengan final.
@@ -24,3 +23,11 @@ Fungsi dari setState adalah untuk memberi tahu framework bahwa internal state ob
 - Keyword const berfungsi untuk mendeklarasikan suatu variabel yang bersifat immutable dan konstan. Value dari variabelnya harus ditetapkan sejak awal. Sehingga pada saat compile, variabel tersebut sudah memiliki nilai. Value pada variabel const harus diinisialisasi secara eksplisit, tidak seperti final.
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Membuat app dengan perintah flutter create counter_7
+- Melakukan modifikasi pada file lib/main.dart, yaitu:
+    - Menambahkan floating action button baru dengan icon remove (-) 
+    - Membuat fungsi decrement pada onpressed button
+    - Menambahkan padding dan expanded untuk mengatur jarak dan posisi dua button
+    - Membuat kondisi if else pada bagian widget text, warna dan texnya disesuaikan dengan kondisi counternya
+    - Membuat kondisi if else pada bagian widget button decrement agar invisible saat counternya 0
+- Add, commit, push ke repo github
