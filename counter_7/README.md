@@ -7,7 +7,7 @@
 - Scaffold : untuk mengatur layout dari widget yang ada di dalamnya
 - Text : untuk menampilkan text dengan format style tertentu
 - FloatingActionButton : untuk menampilkan button yang dapat melakukan suatu action
-- Row : untuk meposisikan beberapa widget dengan layout secara horizontal
+- Row : untuk memposisikan beberapa widget dengan layout secara horizontal
 - Column : untuk memposisikan widget secara vertikal
 - Padding : untuk menambahkan dan mengatur set padding atau space kosong 
 - Center : untuk memposisikan elemen ke tengah bagian
