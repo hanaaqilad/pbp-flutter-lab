@@ -117,25 +117,27 @@ class _MyFormPageState extends State<MyFormPage> {
                                         },
                                     ),
                                 ),
-                                ListTile(
-                                    trailing: DropdownButton(
-                                    hint: Text('Pilih jenis'),
-                                    value: _tipe,
-                                    icon: const Icon(Icons.keyboard_arrow_down),
-                                    items: listTipe.map((String items) {
-                                        return DropdownMenuItem(
-                                        value: items,
-                                        child: Text(items),
-                                        );
-                                    }).toList(),
-                                    onChanged: (String? newValue) {
-                                        setState(() {
-                                        _tipe = newValue!;
-                                        });
-                                    },
+                                Container(
+                                    alignment: Alignment.center,
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: DropdownButton(
+                                        hint: const Text('Pilih jenis'),
+                                        // value: _tipe,
+                                        icon: const Icon(Icons.keyboard_arrow_down),
+                                        items: listTipe.map((String items) {
+                                            return DropdownMenuItem(
+                                            value: items,
+                                            child: Text(items),
+                                            );
+                                        }).toList(),
+                                        onChanged: (String? newValue) {
+                                            setState(() {
+                                            _tipe = newValue!;
+                                            });
+                                        },
+                                    
                                     ),
                                 ),
-                                
                             ], 
                         ),
 

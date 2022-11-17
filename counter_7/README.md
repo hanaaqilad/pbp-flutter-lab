@@ -40,7 +40,6 @@ Navigator.push akan menampilkan screen lain di atas screen saat ini karena adany
 ## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya
 - Drawer : untuk membuat burger menu pada appbar yang berfungsi untuk navigasi pindah page
 - ListView : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data budget)
-- ListTile : untuk menampilkan 1-3 baris teks dari dalam sebuah list
 - TextFormField : untuk menerima input dari user
 - DropdownButton : untuk menampilkan pilihan-pilihan input dalam bentuk dropdown
 - EdgeInsets : untuk mengatur padding dari suatu widget
@@ -49,7 +48,6 @@ Navigator.push akan menampilkan screen lain di atas screen saat ini karena adany
 ## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: `onPressed`)
 - onChanged: terjadi saat terdapat perubahan pada widget
 - onSaved: terjadi saat widget disimpan
-- onTap: terjadi saat widget di tap
 - onPressed: terjadi saat widget di klik
 
 ## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
