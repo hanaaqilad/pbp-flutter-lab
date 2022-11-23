@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:counter_7/model/my_watch_list.dart';
+import 'package:counter_7/fetch_my_watchlist.dart';
 import 'package:counter_7/drawer.dart';
 
 class MyWatchListPage extends StatefulWidget {
@@ -14,29 +15,7 @@ class MyWatchListPage extends StatefulWidget {
 }
 
 class _MyWatchListPageState extends State<MyWatchListPage> {
-    Future<List<MyWatchList>> fetchMyWatchList() async {
-        var url = Uri.parse('https://katalog-hana.herokuapp.com/mywatchlist/json/');
-        var response = await http.get(
-        url,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-        },
-        );
-
-        // melakukan decode response menjadi bentuk json
-        var data = jsonDecode(utf8.decode(response.bodyBytes));
-
-        // melakukan konversi data json menjadi object MyWatchList
-        List<MyWatchList> listMyWatchList = [];
-        for (var d in data) {
-        if (d != null) {
-            listMyWatchList.add(MyWatchList.fromJson(d));
-        }
-        }
-
-        return listMyWatchList;
-    }
+    Future dataWatchlist = fetchMyWatchList();
 
     @override
     Widget build(BuildContext context) {
@@ -49,7 +28,7 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
             drawer: getDrawer(context),
 
             body: FutureBuilder(
-                future: fetchMyWatchList(),
+                future: dataWatchlist,
                 builder: (context, AsyncSnapshot snapshot) {
                     if (snapshot.data == null) {
                     return const Center(child: CircularProgressIndicator());
@@ -81,7 +60,9 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                             padding: const EdgeInsets.all(20.0),
                             decoration: BoxDecoration(
-                                color:Colors.white,
+                                color: snapshot.data![index].fields.watched == "Sudah"? 
+                                      Color.fromARGB(255, 113, 222, 160) : Color.fromARGB(255, 220, 123, 116),
+                                // color:Colors.white,
                                 borderRadius: BorderRadius.circular(15.0),
                                 boxShadow: const [
                                 BoxShadow(
@@ -94,15 +75,27 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                Text(
-                                    "${snapshot.data![index].fields.title}",
-                                    style: const TextStyle(
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
+                                  Row(
+                                    children: [ Text(
+                                      "${snapshot.data![index].fields.title}",
+                                      style: const TextStyle(
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                ),
-                                // const SizedBox(height: 10),
-                                // Text("${snapshot.data![index].fields.watched}"),
+
+                                    Expanded(child: Container()),
+
+                                    Checkbox(  
+                                      value: snapshot.data![index].fields.watched == "Sudah"? true:false,  
+                                      onChanged: (value) {  
+                                        setState(() {  
+                                          snapshot.data![index].fields.watched = value!? "Sudah":"Belum"; 
+                                        });  
+                                      },  
+                                    ),
+                                    ]
+                                  ),
                                 ],
                             ),
                             )

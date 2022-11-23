@@ -66,7 +66,7 @@ Bisa tapi kurang dianjurkan. Dengan membuat model terlebih dahulu, data-data JSO
 - Expanded : untuk membuat jarak kosong antar elemen 
 - ListView : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data film)
 - EdgeInsets : untuk mengatur padding dari suatu widget
-- dll. 
+- CheckBox : untuk membuat form boolean toggle dengan checkbox (mengubah status watched)
 
 ## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
 Pertama, data pada page json dibuatkan dulu modelnya dari generator di Google agar lebih mudah. Kemudian link json tersebut akan diletakkan di dalam method fetchMyWatchList agar datanya bisa difetch kemudian diconvert ke dalam bentuk objek yg sesuai dengan class model MyWatchList yg sudah dibuat sebelumnya. 
