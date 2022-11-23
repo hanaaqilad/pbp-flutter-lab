@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/budget.dart';
+import 'package:counter_7/page/form.dart';
+import 'package:counter_7/page/budget.dart';
 import 'package:counter_7/drawer.dart';
 
 
@@ -49,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      // // Menambahkan drawer menu
+      
+      // Menambahkan drawer menu
       drawer: getDrawer(context),
       
       body: Center(

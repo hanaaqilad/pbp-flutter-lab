@@ -1,6 +1,6 @@
-import 'package:counter_7/main.dart';
+// import 'package:counter_7/main.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/budget.dart';
+import 'package:counter_7/page/budget.dart';
 import 'package:counter_7/drawer.dart';
 
 class MyFormPage extends StatefulWidget {
@@ -28,7 +28,8 @@ class _MyFormPageState extends State<MyFormPage> {
             appBar: AppBar(
                 title: Text('Form'),
             ),
-            //  // Menambahkan drawer menu
+            
+            // Menambahkan drawer menu
             drawer: getDrawer(context),
             
             body: Form(
@@ -96,7 +97,7 @@ class _MyFormPageState extends State<MyFormPage> {
                                         onChanged: (String? value) {
                                             if (isNumeric(value!)) {
                                             setState(() {
-                                                _nominal = int.parse(value!);
+                                                _nominal = int.parse(value);
                                             });
                                             }
                                         },

@@ -57,3 +57,25 @@ Saat navigator push dijalankan, screen baru akan ditambahkan ke stack dan terlet
 - Membuat drawer yang berisi 3 navigasi, yaitu handle homepage counter_7, handle form page tambah budget, dan handle display budget pada data budget. Masing-masing menu akan diarahkan ke page lainnya sesuai konteks menunya. 
 - Membuat file baru bernama `form.dart` beserta widget Form-nya dengan input sesuai keterangan soal. Page ini dipanggil jika menu tambah budget diklik pada burger. 
 - Membuat file baru bernama `budget.dart` beserta widgetnya untuk menampilkan data-data inputan yang telah diinput di form.dart dan disimpan ke dalam struktur data list. Page ini dipanggil jika menu data budget diklik pada burger. 
+
+# TUGAS 9 
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa tapi kurang dianjurkan. Dengan membuat model terlebih dahulu, data-data JSON tersebut akan lebih terstruktur dan lebih mudah untuk akses detail datanya. Selain itu, kita dapat memastikan apakah tipe datanya sesuai atau tidak dan dapat menyesuaikan ulang fields mana yg perlu dipakai. 
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+- Expanded : untuk membuat jarak kosong antar elemen 
+- ListView : untuk menampilkan children widget yang tersimpan dalam sebuah list (menampilkan data film)
+- EdgeInsets : untuk mengatur padding dari suatu widget
+- dll. 
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Pertama, data pada page json dibuatkan dulu modelnya dari generator di Google agar lebih mudah. Kemudian link json tersebut akan diletakkan di dalam method fetchMyWatchList agar datanya bisa difetch kemudian diconvert ke dalam bentuk objek yg sesuai dengan class model MyWatchList yg sudah dibuat sebelumnya. 
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+- Menambahkan button untuk navigasi ke halaman watchlist pada list hamburger
+- Membuat model MyWatchList dari QuickType lalu dibuat file `.dart` nya di dalam folder model
+- Membuat file `my_watch_list_page.dart` yang berisi method fetch data dan untuk menampilkan data-data tersebut nantinya
+- Melakukan fetching data JSON dari link json heroku dan diconvert ke objek MyWatchList
+- Menampilkan data-data yg didapat dengan ListView
+- Menambahkan event onTap, jika card film tersebut diklik maka akan mengarah ke page detail dari film tersebut
+- Membuat file untuk menampilkan halaman detail yg berisi detail filmnya dan button untuk kembali ke halaman watchlist
